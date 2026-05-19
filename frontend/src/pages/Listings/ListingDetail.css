@@ -1,0 +1,218 @@
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-2xl);
+  margin-top: var(--space-lg);
+}
+
+.detail-gallery { margin-bottom: var(--space-xl); }
+
+.gallery-main {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-actions {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.gallery-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.gallery-btn:hover { background: rgba(0,0,0,0.6); transform: scale(1.1); }
+
+.gallery-thumbs {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.gallery-thumbs .thumb {
+  width: 80px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+}
+
+.gallery-thumbs .thumb.active, .gallery-thumbs .thumb:hover {
+  opacity: 1;
+  border-color: var(--primary);
+}
+
+.detail-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: var(--space-sm) 0;
+}
+
+.detail-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-lg);
+}
+
+.detail-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detail-rating { color: var(--accent); font-weight: 600; }
+
+.detail-desc {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+}
+
+.detail-section { margin-bottom: var(--space-xl); }
+.detail-section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.amenities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.amenity-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.4rem 0.8rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  color: var(--success);
+}
+
+.no-reviews { color: var(--text-muted); font-style: italic; }
+
+.review-item {
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  background: #f8fafc;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+.review-item:hover {
+  transform: translateX(4px);
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.review-header { margin-bottom: var(--space-sm); }
+.review-item p { font-size: 0.9rem; color: var(--text-secondary); }
+
+/* Booking Sidebar */
+.detail-sidebar { position: sticky; top: calc(var(--navbar-height) + var(--space-xl)); height: fit-content; }
+
+.booking-card { 
+  padding: var(--space-xl);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.booking-price {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.booking-price .price-amount {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.booking-price .price-unit { color: var(--text-muted); }
+
+.booking-dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.booking-summary {
+  padding: var(--space-md) 0;
+  margin: var(--space-md) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 4px 0;
+}
+
+.summary-row.total {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  padding-top: var(--space-sm);
+}
+
+.booking-guarantee {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  font-size: 0.8rem;
+  color: var(--success);
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .detail-layout { grid-template-columns: 1fr; }
+  .detail-sidebar { position: static; }
+}
